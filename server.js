@@ -26,7 +26,7 @@ app.get('/number',(req,res)=> {
 });
 
 app.post('/number',(req,res) => {
-  client.query('CREATE TABLE IF NOT EXISTS number ( value integer(100));');
+  client.query('CREATE TABLE IF NOT EXISTS number(value integer);');
   client.query(`INSERT INTO number values(${req.body.number})`);
   res.redirect('/number');
   res.end();
